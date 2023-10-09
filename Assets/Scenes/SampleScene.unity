@@ -341,12 +341,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1261666322 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7871601679285086139, guid: a6b2cd8e24e876f4da9c8e6238e67ea3, type: 3}
-  m_PrefabInstance: {fileID: 1664134662}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1664134662
+--- !u!1001 &1479011812
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -508,7 +503,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.37486652, g: 0.97525674, b: 0.9811321, a: 1}
+  m_Color: {r: 0.35230508, g: 0.3678231, b: 0.3679245, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -545,7 +540,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30d65fc4d9bfbf47a5c60ffe72ae014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _conveyorPointPrefab: {fileID: 1261666322}
+  _conveyorPointPrefab: {fileID: 7871601679285086139, guid: a6b2cd8e24e876f4da9c8e6238e67ea3, type: 3}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _overlapCircleRadius: 1
 --- !u!61 &2141784309
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -598,6 +597,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 1664134662}
   - {fileID: 1842293780}
   - {fileID: 2141784307}
+  - {fileID: 1479011812}
