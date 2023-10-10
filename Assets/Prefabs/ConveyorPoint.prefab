@@ -294,6 +294,46 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4222904149360642809, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222904149360642809, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222904149360642809, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222904149360642809, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -5995356268679496495}
+    - target: {fileID: 4222904149360642809, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222904149360642809, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222904149360642809, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeleteConveyorPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222904149360642809, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ConveyorPoint, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222904149360642809, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ConveyorPoint, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222904149360642809, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6196704624497021932, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -401,6 +441,58 @@ PrefabInstance:
     - target: {fileID: 7022847532885397843, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746909683326627277, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746909683326627277, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746909683326627277, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746909683326627277, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -5995356268679496495}
+    - target: {fileID: 8746909683326627277, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1268957788046648490}
+    - target: {fileID: 8746909683326627277, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746909683326627277, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746909683326627277, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CreateNextPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746909683326627277, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ToggleUIContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746909683326627277, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ConveyorPoint, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746909683326627277, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UIConveyorPoint, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746909683326627277, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746909683326627277, guid: 0fd1a8c8d10389145b81dded81cfd6e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

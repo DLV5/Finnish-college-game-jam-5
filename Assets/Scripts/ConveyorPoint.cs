@@ -4,13 +4,18 @@ public class ConveyorPoint : MonoBehaviour
 {
     private UIConveyorPoint _uiConveyorPoint;
 
-    private ConveyorPoint _nextPoint;
 
     private LineRenderer _lineRenderer;
 
 
     private Vector3 initialMousePosition;
     private bool _isDragging = false;
+
+    private bool _isLastPointOfALine = false;
+
+    public bool IsFirstPointOfALine { get; set; } = true;
+    public ConveyorPoint NextPoint { get; private set; }
+    public bool FollowMouse { get; set; } = false;
 
     private void Start()
     {
@@ -21,14 +26,22 @@ public class ConveyorPoint : MonoBehaviour
         private void Update()
     {
         UpdateLineRendererPositions();
+
+        if(FollowMouse)
+        {
+            MoveToMouse();
+        }
     }
 
     private void OnMouseDown()
     {
-        Debug.Log("OnMouseDown");
-
         initialMousePosition = GetMouseWorldPosition();
         _isDragging = false;
+
+        if (FollowMouse)
+        {
+            FollowMouse = false;
+        }
     }
 
     private void OnMouseDrag()
@@ -44,7 +57,7 @@ public class ConveyorPoint : MonoBehaviour
         // If it's a drag, move the point
         if (_isDragging)
         {
-            transform.position = GetMouseWorldPosition();
+            MoveToMouse();
             Debug.Log("OnMouseDrag");
 
         }
@@ -59,11 +72,32 @@ public class ConveyorPoint : MonoBehaviour
 
         _isDragging = false;
     }
-
-    private void CreateNextPoint()
+    public void CreateNextPoint()
     {
-        _nextPoint = Instantiate(gameObject, GetMouseWorldPosition(), Quaternion.identity).GetComponent<ConveyorPoint>();
-        _nextPoint.gameObject.transform.position = GetMouseWorldPosition();
+        if (NextPoint != null)
+        {
+            NextPoint.DeleteConveyorPoint();
+        }
+        _isLastPointOfALine = false;
+
+        NextPoint = Instantiate(gameObject, GetMouseWorldPosition(), Quaternion.identity).GetComponent<ConveyorPoint>();
+        NextPoint.FollowMouse = true;
+        NextPoint.IsFirstPointOfALine = false;
+    }
+
+    public void DeleteConveyorPoint()
+    {
+        if(NextPoint != null)
+        {
+            NextPoint.DeleteConveyorPoint();
+        }
+
+        Destroy(gameObject);
+    }
+
+    private void MoveToMouse()
+    {
+        transform.position = GetMouseWorldPosition();
     }
 
     private Vector3 GetMouseWorldPosition()
@@ -78,12 +112,12 @@ public class ConveyorPoint : MonoBehaviour
 
     private void UpdateLineRendererPositions()
     {
-        if (_nextPoint != null)
+        if (NextPoint != null)
         {
             // Set the positions of the LineRenderer to match the positions of pointA and pointB
             _lineRenderer.enabled = true;
             _lineRenderer.SetPosition(0, transform.position);
-            _lineRenderer.SetPosition(1, _nextPoint.transform.position);
+            _lineRenderer.SetPosition(1, NextPoint.transform.position);
         } else
         {
             _lineRenderer.enabled = false;
