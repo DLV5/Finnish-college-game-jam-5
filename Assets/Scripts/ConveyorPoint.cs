@@ -1,14 +1,21 @@
 using UnityEngine;
-
+[RequireComponent (typeof(UIConveyorPoint))]
 public class ConveyorPoint : MonoBehaviour
 {
+    private UIConveyorPoint _uiConveyorPoint;
+
     private ConveyorPoint _nextPoint;
 
-    private LineRenderer lineRenderer;
+    private LineRenderer _lineRenderer;
+
+
+    private Vector3 initialMousePosition;
+    private bool _isDragging = false;
 
     private void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
+        _lineRenderer = GetComponent<LineRenderer>();
+        _uiConveyorPoint = GetComponent<UIConveyorPoint>();
     }
 
         private void Update()
@@ -16,14 +23,41 @@ public class ConveyorPoint : MonoBehaviour
         UpdateLineRendererPositions();
     }
 
+    private void OnMouseDown()
+    {
+        Debug.Log("OnMouseDown");
+
+        initialMousePosition = GetMouseWorldPosition();
+        _isDragging = false;
+    }
+
     private void OnMouseDrag()
     {
-        transform.position = GetMouseWorldPosition();
+        float distance = Vector3.Distance(initialMousePosition, GetMouseWorldPosition());
+
+        // If the distance exceeds a threshold, consider it a drag
+        if (distance > 0.1f)
+        {
+            _isDragging = true;
+        }
+
+        // If it's a drag, move the point
+        if (_isDragging)
+        {
+            transform.position = GetMouseWorldPosition();
+            Debug.Log("OnMouseDrag");
+
+        }
     }
 
     private void OnMouseUp()
     {
-        //CreateNextPoint();
+        if (!_isDragging)
+        {
+            _uiConveyorPoint.ToggleUIContainer();
+        }
+
+        _isDragging = false;
     }
 
     private void CreateNextPoint()
@@ -47,12 +81,12 @@ public class ConveyorPoint : MonoBehaviour
         if (_nextPoint != null)
         {
             // Set the positions of the LineRenderer to match the positions of pointA and pointB
-            lineRenderer.enabled = true;
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, _nextPoint.transform.position);
+            _lineRenderer.enabled = true;
+            _lineRenderer.SetPosition(0, transform.position);
+            _lineRenderer.SetPosition(1, _nextPoint.transform.position);
         } else
         {
-            lineRenderer.enabled = false;
+            _lineRenderer.enabled = false;
         }
     }
 }
