@@ -1,17 +1,15 @@
 using UnityEngine;
-[RequireComponent (typeof(UIConveyorPoint))]
+
 public class ConveyorPoint : MonoBehaviour
 {
     private UIConveyorPoint _uiConveyorPoint;
-
-
     private LineRenderer _lineRenderer;
-
 
     private Vector3 initialMousePosition;
     private bool _isDragging = false;
-
     private bool _isLastPointOfALine = false;
+
+    [SerializeField] private float _snapRadius;
 
     public bool IsFirstPointOfALine { get; set; } = true;
     public ConveyorPoint NextPoint { get; private set; }
@@ -23,11 +21,11 @@ public class ConveyorPoint : MonoBehaviour
         _uiConveyorPoint = GetComponent<UIConveyorPoint>();
     }
 
-        private void Update()
+    private void Update()
     {
         UpdateLineRendererPositions();
 
-        if(FollowMouse)
+        if (FollowMouse)
         {
             MoveToMouse();
         }
@@ -58,20 +56,48 @@ public class ConveyorPoint : MonoBehaviour
         if (_isDragging)
         {
             MoveToMouse();
-            Debug.Log("OnMouseDrag");
-
         }
     }
 
     private void OnMouseUp()
     {
+        // Check if it's the last point of a line
+
+        // Handle UI toggle
         if (!_isDragging)
         {
             _uiConveyorPoint.ToggleUIContainer();
         }
 
+        if (IsFirstPointOfALine)
+        {
+            SnapToNearestSnapPoint(SnapPointType.ResourceSupplier);
+        }
+        else if (_isLastPointOfALine)
+        {
+            SnapToNearestSnapPoint(SnapPointType.ResourceConsumer);
+        }
+
         _isDragging = false;
     }
+
+    private void SnapToNearestSnapPoint(SnapPointType snapPointType)
+    {
+        Vector2 currentPosition = transform.position;
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(currentPosition, _snapRadius);
+
+        foreach (Collider2D collider in colliders)
+        {
+            SnapPoint snapPoint = collider.GetComponent<SnapPoint>();
+
+            if (snapPoint != null && snapPoint.snapPointType == snapPointType)
+            {
+                transform.position = snapPoint.transform.position;
+                break; // Stop after snapping to the nearest snap point
+            }
+        }
+    }
+
     public void CreateNextPoint()
     {
         if (NextPoint != null)
@@ -87,7 +113,7 @@ public class ConveyorPoint : MonoBehaviour
 
     public void DeleteConveyorPoint()
     {
-        if(NextPoint != null)
+        if (NextPoint != null)
         {
             NextPoint.DeleteConveyorPoint();
         }
@@ -103,12 +129,9 @@ public class ConveyorPoint : MonoBehaviour
     private Vector3 GetMouseWorldPosition()
     {
         Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
         position.z = 0;
-
         return position;
     }
-
 
     private void UpdateLineRendererPositions()
     {
@@ -118,7 +141,8 @@ public class ConveyorPoint : MonoBehaviour
             _lineRenderer.enabled = true;
             _lineRenderer.SetPosition(0, transform.position);
             _lineRenderer.SetPosition(1, NextPoint.transform.position);
-        } else
+        }
+        else
         {
             _lineRenderer.enabled = false;
         }

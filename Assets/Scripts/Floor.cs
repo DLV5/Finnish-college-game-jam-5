@@ -21,10 +21,4 @@ public class Floor : MonoBehaviour
     {
         return Physics2D.OverlapCircle(position, _overlapCircleRadius, layerMask) != null;
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(Camera.main.ScreenToWorldPoint(Input.mousePosition), _overlapCircleRadius);
-    }
 }
