@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class ConveyorPoint : MonoBehaviour
 {
+    public bool IsFirstPointOfALine { get; set; } = true;
+    public ConveyorPoint NextPoint { get; private set; }
+    public bool FollowMouse { get; set; } = false;
     private UIConveyorPoint _uiConveyorPoint;
     private LineRenderer _lineRenderer;
 
@@ -9,21 +12,23 @@ public class ConveyorPoint : MonoBehaviour
     private bool _isDragging = false;
     private bool _isLastPointOfALine = true;
 
+    private SnapPoint _connectedSnapPoint;
+
     [SerializeField] private float _snapRadius;
 
-    public bool IsFirstPointOfALine { get; set; } = true;
-    public ConveyorPoint NextPoint { get; private set; }
-    public bool FollowMouse { get; set; } = false;
 
     private void Start()
     {
-        _lineRenderer = GetComponent<LineRenderer>();
+        _lineRenderer ??= GetComponent<LineRenderer>();
         _uiConveyorPoint = GetComponent<UIConveyorPoint>();
     }
 
     private void Update()
     {
-        UpdateLineRendererPositions();
+        if(_lineRenderer != null)
+        {
+            UpdateLineRendererPositions();
+        }
 
         if (FollowMouse)
         {
@@ -55,6 +60,11 @@ public class ConveyorPoint : MonoBehaviour
         // If it's a drag, move the point
         if (_isDragging)
         {
+            if(_connectedSnapPoint != null)
+            {
+                _connectedSnapPoint.ConnectedConveyorPoint = null;
+                _connectedSnapPoint = null;
+            }
             MoveToMouse();
         }
     }
@@ -115,6 +125,12 @@ public class ConveyorPoint : MonoBehaviour
         if (nearestSnapPoint != null)
         {
             transform.position = nearestSnapPoint.transform.position;
+            _connectedSnapPoint = nearestSnapPoint.GetComponent<SnapPoint>();
+            _connectedSnapPoint.ConnectedConveyorPoint = this;
+            if(snapPointType == SnapPointType.ResourceConsumer)
+            {
+                NextPoint = nearestSnapPoint.GetComponent<ConveyorPoint>();
+            }
         }
     }
 
