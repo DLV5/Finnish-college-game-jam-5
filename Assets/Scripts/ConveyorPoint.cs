@@ -7,7 +7,7 @@ public class ConveyorPoint : MonoBehaviour
 
     private Vector3 initialMousePosition;
     private bool _isDragging = false;
-    private bool _isLastPointOfALine = false;
+    private bool _isLastPointOfALine = true;
 
     [SerializeField] private float _snapRadius;
 
@@ -83,18 +83,38 @@ public class ConveyorPoint : MonoBehaviour
 
     private void SnapToNearestSnapPoint(SnapPointType snapPointType)
     {
-        Vector2 currentPosition = transform.position;
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(currentPosition, _snapRadius);
+        // Find all snap points in the scene of the specified type
+        SnapPoint[] snapPoints = FindObjectsOfType<SnapPoint>();
 
-        foreach (Collider2D collider in colliders)
+        if (snapPoints.Length == 0)
         {
-            SnapPoint snapPoint = collider.GetComponent<SnapPoint>();
+            return; // No snap points found, exit the function
+        }
 
-            if (snapPoint != null && snapPoint.snapPointType == snapPointType)
+        Vector3 currentPosition = transform.position;
+        SnapPoint nearestSnapPoint = null;
+        float closestDistance = _snapRadius; // Set an initial distance greater than the snapping radius
+
+        foreach (SnapPoint snapPoint in snapPoints)
+        {
+            // Check if the snap point matches the desired type
+            if (snapPoint.snapPointType == snapPointType)
             {
-                transform.position = snapPoint.transform.position;
-                break; // Stop after snapping to the nearest snap point
+                float distance = Vector3.Distance(currentPosition, snapPoint.transform.position);
+
+                // If this snap point is within the snapping radius and closer than the previous one
+                if (distance <= _snapRadius && distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    nearestSnapPoint = snapPoint;
+                }
             }
+        }
+
+        // Snap to the nearest snap point if one was found
+        if (nearestSnapPoint != null)
+        {
+            transform.position = nearestSnapPoint.transform.position;
         }
     }
 
