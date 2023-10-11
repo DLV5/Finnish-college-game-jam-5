@@ -64,6 +64,7 @@ public class ConveyorPoint : MonoBehaviour
         {
             if(_connectedSnapPoint != null)
             {
+                Material.ConnectedConsumer = null;
                 _connectedSnapPoint.ConnectedConveyorPoint = null;
                 _connectedSnapPoint = null;
             }
