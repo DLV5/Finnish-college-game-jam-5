@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class MaterialMovement : MonoBehaviour
 {
-    public static event Action<MaterialType, GameObject> OnMaterialReachedEnd;
-
     [SerializeField] private MaterialType _materialType;
 
     [SerializeField] private float _movementSpeed;
+    private ConveyorPoint _currentPoint;
     [HideInInspector] public ConveyorPoint NextPointToMove { get; set; }
 
     private void Update()
@@ -28,15 +27,33 @@ public class MaterialMovement : MonoBehaviour
         }
     }
 
+    //private void SetMaterial()
+    //{
+    //    NextPointToMove.SetMaterial(_materialType);
+    //}
+    //private void ResetMaterial()
+    //{
+    //    NextPointToMove.ResetMaterial();
+    //}
+
     private void MoveToNextPoint()
     {
+        _currentPoint = NextPointToMove;
         if (NextPointToMove.NextPoint != null)
         {
+            //ResetMaterial();
             NextPointToMove = NextPointToMove.NextPoint;
+            //SetMaterial();
         }
         else
         {
-            OnMaterialReachedEnd?.Invoke(_materialType, gameObject);
+            if(_currentPoint.Material.ConnectedConsumer != null)
+            {
+                _currentPoint.Material.ConnectedConsumer.ConsumeResource(_materialType, gameObject);
+            } else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

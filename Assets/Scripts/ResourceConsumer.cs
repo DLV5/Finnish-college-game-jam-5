@@ -2,28 +2,19 @@ using UnityEngine;
 
 public enum MaterialType
 {
+    None,
     Sand,
     Glass
 }
 public class ResourceConsumer : SnapPoint
 {
     [SerializeField] private MaterialType _type;
-    [SerializeField] private int _amountToCompleteLevel;
-
-    private void OnEnable()
+    private void Start()
     {
-        MaterialMovement.OnMaterialReachedEnd += ConsumeResource;
+        snapPointType = SnapPointType.ResourceConsumer;
     }
-    private void OnDisable()
-    {
-        MaterialMovement.OnMaterialReachedEnd -= ConsumeResource;
-    }
-    public void ConsumeResource(MaterialType type, GameObject gameObject)
-    {
-        if(_type == type)
-        {
-            _amountToCompleteLevel--;
-        } 
+    public virtual void ConsumeResource(MaterialType type, GameObject gameObject)
+    {     
         Destroy(gameObject);
     }
 }

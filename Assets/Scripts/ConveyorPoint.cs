@@ -4,6 +4,7 @@ public class ConveyorPoint : MonoBehaviour
 {
     public bool IsFirstPointOfALine { get; set; } = true;
     public ConveyorPoint NextPoint { get; private set; }
+    public ConveyorPointMaterial Material;
     public bool FollowMouse { get; set; } = false;
     private UIConveyorPoint _uiConveyorPoint;
     private LineRenderer _lineRenderer;
@@ -21,6 +22,7 @@ public class ConveyorPoint : MonoBehaviour
     {
         _lineRenderer ??= GetComponent<LineRenderer>();
         _uiConveyorPoint = GetComponent<UIConveyorPoint>();
+        Material = GetComponent<ConveyorPointMaterial>();
     }
 
     private void Update()
@@ -91,6 +93,16 @@ public class ConveyorPoint : MonoBehaviour
         _isDragging = false;
     }
 
+    //public void SetMaterial(MaterialType materialType)
+    //{
+    //    _material.resource = materialType;
+    //}
+
+    //public void ResetMaterial()
+    //{
+    //    _material.resource = MaterialType.None;
+    //}
+
     private void SnapToNearestSnapPoint(SnapPointType snapPointType)
     {
         // Find all snap points in the scene of the specified type
@@ -127,9 +139,9 @@ public class ConveyorPoint : MonoBehaviour
             transform.position = nearestSnapPoint.transform.position;
             _connectedSnapPoint = nearestSnapPoint.GetComponent<SnapPoint>();
             _connectedSnapPoint.ConnectedConveyorPoint = this;
-            if(snapPointType == SnapPointType.ResourceConsumer)
+            if (snapPointType == SnapPointType.ResourceConsumer)
             {
-                NextPoint = nearestSnapPoint.GetComponent<ConveyorPoint>();
+                Material.ConnectedConsumer = nearestSnapPoint.GetComponent<ResourceConsumer>();
             }
         }
     }

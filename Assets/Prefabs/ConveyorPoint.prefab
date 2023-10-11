@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5174356141500083203}
   - component: {fileID: -7189993682820725609}
   - component: {fileID: -5995356268679496495}
+  - component: {fileID: 216768111446762334}
   - component: {fileID: -3984233461567102850}
   - component: {fileID: 1268957788046648490}
   m_Layer: 7
@@ -137,7 +138,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da20cc38a167354c93779cd93889fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Material: {fileID: 0}
   _snapRadius: 1
+--- !u!114 &216768111446762334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7871601679285086139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b30e98c4d532343942537955bfee9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resource: 0
 --- !u!120 &-3984233461567102850
 LineRenderer:
   serializedVersion: 2
