@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 
 public class MaterialMovement : MonoBehaviour
 {
-    [SerializeField] private MaterialType _materialType;
+    [SerializeField] private SpriteRenderer _renderer;
 
     [SerializeField] private float _movementSpeed;
     private ConveyorPoint _currentPoint;
@@ -49,7 +48,7 @@ public class MaterialMovement : MonoBehaviour
         {
             if(_currentPoint.Material.ConnectedConsumer != null)
             {
-                _currentPoint.Material.ConnectedConsumer.ConsumeResource(_materialType, gameObject);
+                _currentPoint.Material.ConnectedConsumer.ConsumeResource(_renderer.color, gameObject);
             } else
             {
                 Destroy(gameObject);

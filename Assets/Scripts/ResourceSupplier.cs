@@ -4,6 +4,13 @@ using UnityEngine;
 public class ResourceSupplier : SnapPoint
 {
     [SerializeField] private GameObject _prefab;
+    public GameObject Prefab 
+    {
+        get { return _prefab; } 
+        set { _prefab = value; } 
+    }
+
+    public bool ProduceResources;
     [SerializeField] private float _cooldown;
 
     private void Start()
@@ -16,7 +23,10 @@ public class ResourceSupplier : SnapPoint
         while (true)
         {
             yield return new WaitForSeconds(_cooldown);
-            SpawnMaterial();
+            if (ProduceResources)
+            {
+                SpawnMaterial();
+            }
         }
     }
     private void SpawnMaterial()

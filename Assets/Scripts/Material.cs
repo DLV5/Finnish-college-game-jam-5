@@ -1,11 +1,11 @@
-public class Material
+using UnityEngine;
+
+public class Material : MonoBehaviour
 {
-    public string Type { get; set; }
-
-    public Material(string type)
+    [HideInInspector] public Color Color;
+    [SerializeField] private SpriteRenderer _renderer;
+    public void SetColor()
     {
-        Type = type;
+        _renderer.color = Color;
     }
-
-    // Common methods for materials
 }

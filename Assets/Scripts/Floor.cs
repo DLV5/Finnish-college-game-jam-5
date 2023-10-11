@@ -13,7 +13,7 @@ public class Floor : MonoBehaviour
         position.z = 0;
         if (!CheckAround(position))
         {
-            Instantiate( _conveyorPointPrefab, position, Quaternion.identity);
+            Instantiate( _conveyorPointPrefab, new Vector3(position.x, position.y, 0), Quaternion.identity);
         }
     }
 

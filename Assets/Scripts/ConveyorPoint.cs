@@ -93,16 +93,6 @@ public class ConveyorPoint : MonoBehaviour
         _isDragging = false;
     }
 
-    //public void SetMaterial(MaterialType materialType)
-    //{
-    //    _material.resource = materialType;
-    //}
-
-    //public void ResetMaterial()
-    //{
-    //    _material.resource = MaterialType.None;
-    //}
-
     private void SnapToNearestSnapPoint(SnapPointType snapPointType)
     {
         // Find all snap points in the scene of the specified type
@@ -141,7 +131,7 @@ public class ConveyorPoint : MonoBehaviour
             _connectedSnapPoint.ConnectedConveyorPoint = this;
             if (snapPointType == SnapPointType.ResourceConsumer)
             {
-                Material.ConnectedConsumer = nearestSnapPoint.GetComponent<ResourceConsumer>();
+                Material.ConnectedConsumer = nearestSnapPoint.GetComponent<ColorConsumer>();
             }
         }
     }
