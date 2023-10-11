@@ -12,7 +12,7 @@ public class ColorMixer : MonoBehaviour
     {
         _connectedSupplierMaterial = _connectedSupplier.Prefab.GetComponent<Material>();
     }
-    public void  Proceed()
+    public void Proceed()
     { 
         if(_colorsToMix.Count > 1)
         {
@@ -50,6 +50,7 @@ public class ColorMixer : MonoBehaviour
         if (_colorsToMix.Contains(color))
         {
             _colorsToMix.Remove(color);
+            Proceed();
         }
     }
     // Function to mix two colors

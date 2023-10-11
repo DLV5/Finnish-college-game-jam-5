@@ -23,26 +23,18 @@ public class MaterialMovement : MonoBehaviour
                 // Move the material towards the next point
                 transform.position = Vector3.MoveTowards(transform.position, NextPointToMove.transform.position, Time.deltaTime * _movementSpeed);
             }
+        } else
+        {
+            Destroy(gameObject);
         }
     }
-
-    //private void SetMaterial()
-    //{
-    //    NextPointToMove.SetMaterial(_materialType);
-    //}
-    //private void ResetMaterial()
-    //{
-    //    NextPointToMove.ResetMaterial();
-    //}
 
     private void MoveToNextPoint()
     {
         _currentPoint = NextPointToMove;
         if (NextPointToMove.NextPoint != null)
         {
-            //ResetMaterial();
             NextPointToMove = NextPointToMove.NextPoint;
-            //SetMaterial();
         }
         else
         {
