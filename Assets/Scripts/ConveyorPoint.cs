@@ -125,7 +125,7 @@ public class ConveyorPoint : MonoBehaviour
         }
 
         // Snap to the nearest snap point if one was found
-        if (nearestSnapPoint != null)
+        if (nearestSnapPoint != null && nearestSnapPoint.ConnectedConveyorPoint == null)
         {
             transform.position = nearestSnapPoint.transform.position;
             _connectedSnapPoint = nearestSnapPoint.GetComponent<SnapPoint>();

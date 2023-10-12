@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8960443284474105862}
   - component: {fileID: 2645813711405097134}
   - component: {fileID: 6476037937907835948}
+  - component: {fileID: 5459681184567652142}
   m_Layer: 8
   m_Name: ResourceSupplier
   m_TagString: Untagged
@@ -101,3 +102,25 @@ MonoBehaviour:
   _prefab: {fileID: 4252697379143293334, guid: 84248939bcf24104fb621e5bce059261, type: 3}
   ProduceResources: 1
   _cooldown: 0.5
+--- !u!95 &5459681184567652142
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2916843501019802641}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 409844e8a51ddfd479260af1453e674b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

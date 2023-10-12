@@ -25,9 +25,6 @@ public class TutorialText : MonoBehaviour
         {
             _texts[_index].SetActive(true);
             _index++;
-        } else
-        {
-            gameObject.SetActive(false);
         }
     }
 }

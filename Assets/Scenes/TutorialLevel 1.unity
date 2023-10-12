@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 67682973}
   - component: {fileID: 67682975}
   - component: {fileID: 67682974}
+  - component: {fileID: 67682976}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -264,7 +265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -623.80994, y: 0}
+  m_AnchoredPosition: {x: -623.80994, y: -7.2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &67682974
@@ -364,6 +365,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67682972}
   m_CullTransparentMesh: 1
+--- !u!95 &67682976
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67682972}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c855797f89a78e2419599795b33b1364, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &119299154
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +398,7 @@ GameObject:
   - component: {fileID: 119299155}
   - component: {fileID: 119299157}
   - component: {fileID: 119299156}
+  - component: {fileID: 119299158}
   m_Layer: 5
   m_Name: FinnishText
   m_TagString: Untagged
@@ -430,7 +454,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 3892314112
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -498,6 +522,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119299154}
   m_CullTransparentMesh: 1
+--- !u!95 &119299158
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119299154}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9df87175253257b4b8c848b6a71bba3c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &253047589
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +623,7 @@ GameObject:
   - component: {fileID: 253185842}
   - component: {fileID: 253185844}
   - component: {fileID: 253185843}
+  - component: {fileID: 253185845}
   m_Layer: 5
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -600,7 +647,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -623.80994, y: -29}
+  m_AnchoredPosition: {x: -623.80994, y: -51.4}
   m_SizeDelta: {x: 42.925, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &253185843
@@ -632,8 +679,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 0
+  m_fontColor: {r: 0, g: 0, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -700,6 +747,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253185841}
   m_CullTransparentMesh: 1
+--- !u!95 &253185845
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253185841}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11a32e508b81c9f428df2f85b19a391c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &301176127
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,11 +929,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7337271380642577970, guid: 645372159511d98489a47ad487e069c8, type: 3}
       propertyPath: _requiredColor.g
-      value: 0.84705883
+      value: 0.7490196
       objectReference: {fileID: 0}
     - target: {fileID: -7337271380642577970, guid: 645372159511d98489a47ad487e069c8, type: 3}
       propertyPath: _requiredColor.r
-      value: 0.6509804
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1556492153150920652, guid: 645372159511d98489a47ad487e069c8, type: 3}
       propertyPath: m_Color.b
@@ -880,7 +949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7995453334577957446, guid: 645372159511d98489a47ad487e069c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.2
+      value: 5.25
       objectReference: {fileID: 0}
     - target: {fileID: 7995453334577957446, guid: 645372159511d98489a47ad487e069c8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1047,7 +1116,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _texts:
-  - {fileID: 1435820359}
   - {fileID: 1536107524}
   - {fileID: 51953443}
   - {fileID: 1966863892}
@@ -1714,6 +1782,7 @@ GameObject:
   - component: {fileID: 1435820360}
   - component: {fileID: 1435820362}
   - component: {fileID: 1435820361}
+  - component: {fileID: 1435820363}
   m_Layer: 5
   m_Name: Text (TMP) (3)
   m_TagString: Untagged
@@ -1837,6 +1906,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435820359}
   m_CullTransparentMesh: 1
+--- !u!95 &1435820363
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435820359}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c568e6bfc9ac534796b6f686433fe5c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1536107524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1848,13 +1939,14 @@ GameObject:
   - component: {fileID: 1536107525}
   - component: {fileID: 1536107527}
   - component: {fileID: 1536107526}
+  - component: {fileID: 1536107528}
   m_Layer: 5
   m_Name: Text (TMP) (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1536107525
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1903,7 +1995,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4227858432
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1971,6 +2063,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536107524}
   m_CullTransparentMesh: 1
+--- !u!95 &1536107528
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536107524}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 89d0fe688c5fa7141a9cc4827db5d3e6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1842293778
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,6 +2138,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1966863893}
+  - component: {fileID: 1966863895}
+  - component: {fileID: 1966863894}
   m_Layer: 0
   m_Name: SquareText
   m_TagString: Untagged
@@ -2048,6 +2164,40 @@ Transform:
   - {fileID: 1002924556}
   m_Father: {fileID: 386752156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!225 &1966863894
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966863892}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!95 &1966863895
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966863892}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c80c86a3b2b55d45b4ecbe7adfe6673, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2020411308
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,11 +2620,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8960443284474105862, guid: cb9e7dc6bd693bf4785a21cad0c45493, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.02
+      value: -6.95
       objectReference: {fileID: 0}
     - target: {fileID: 8960443284474105862, guid: cb9e7dc6bd693bf4785a21cad0c45493, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8960443284474105862, guid: cb9e7dc6bd693bf4785a21cad0c45493, type: 3}
       propertyPath: m_LocalPosition.z

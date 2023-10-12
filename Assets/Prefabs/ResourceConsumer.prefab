@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7995453334577957446}
   - component: {fileID: 1556492153150920652}
   - component: {fileID: -7337271380642577970}
+  - component: {fileID: 8357395161108162976}
   m_Layer: 8
   m_Name: ResourceConsumer
   m_TagString: Untagged
@@ -101,3 +102,27 @@ MonoBehaviour:
   _connectedMixer: {fileID: 0}
   _isFinal: 0
   _requiredColor: {r: 0, g: 0, b: 0, a: 0}
+  _levelFinishedUI: {fileID: 0}
+  _threshold: 0.1
+--- !u!95 &8357395161108162976
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8699713831692672732}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf219e5c27f590447a32bd24518dfdab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
