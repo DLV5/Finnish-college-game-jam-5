@@ -1,12 +1,18 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelFader : MonoBehaviour
 {
-    public Animation levelFaderAnimation;
+    public Animator levelFaderAnimation;
 
     public void StartFading()
     {
         // Play the fade-out animation
-        levelFaderAnimation.Play("FadeOutAnimation");
+        levelFaderAnimation.SetTrigger("FadeIn");
+    }
+
+    public void FadeToNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
